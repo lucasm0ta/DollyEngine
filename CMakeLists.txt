@@ -28,7 +28,12 @@ endif()
 
 # Look up SDL2 and add the include directory to our include path
 find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
+
+# Fix include dir
+if (${SDL2_INCLUDE_DIRS})
+    set(${SDL2_INCLUDE_DIR} ${SDL2_INCLUDE_DIR})
+endif()
+include_directories(${SDL2_INCLUDE_DIR})
 
 # Add Subprojects
 add_subdirectory (src)

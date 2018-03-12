@@ -1,4 +1,5 @@
 project(DollyEngine)
+
 include_directories(${SDL2_INCLUDE_DIRS})
 add_executable(DollyEngine main.cpp)
 

@@ -7,3 +7,7 @@ addons:
     sources:
       - kalakris-cmake
 env: COMPILER=clang++-3.7
+script:
+  - if [ $TRAVIS_OS_NAME == linux ]; then ./scripts/dependencies_linux.sh; fi;
+  - if [ $TRAVIS_OS_NAME == osx ]; then ./scripts/dependencies_osx.sh; fi;
+  - ./scripts/build.sh
