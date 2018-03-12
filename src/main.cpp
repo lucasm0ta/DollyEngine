@@ -1,4 +1,16 @@
 #include <iostream>
-int main() {
-    std::cout << "AHA"<<std::endl;
+#include <SDL2/SDL.h>
+
+/**
+ * The main method.
+ * @method main
+ * @return [description]
+ */
+int main(int argc, char **argv) {
+    if (SDL_Init(SDL_INIT_VIDEO) != 0){
+		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
+		return 1;
+	}
+	SDL_Quit();
+	return 0;
 }
